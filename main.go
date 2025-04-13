@@ -5,7 +5,7 @@ import (
     "log"
     "os"
     "gopkg.in/yaml.v3"
-    "etl-pipeline/nodes"
+    "data-pipeline/nodes"
 )
 
 // PipelineConfig is the top-level config struct for YAML parsing.

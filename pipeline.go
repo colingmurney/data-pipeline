@@ -7,7 +7,7 @@ import (
     "sync"
     "time"
 
-    "etl-pipeline/nodes"
+    "data-pipeline/nodes"
 )
 
 // RunPipeline orchestrates the entire pipeline in linear order.

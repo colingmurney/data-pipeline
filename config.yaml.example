@@ -6,6 +6,7 @@ pipeline:
     config:
       endpoint: "https://api.somewhere/v1/contacts"
       apiKey: "MY_API_KEY"
+      cacheFilePath: "./cache/import_example.json"
 
   - name: "TransformContacts"
     type: "transformExample"
@@ -14,6 +15,15 @@ pipeline:
     config:
       uppercaseField: "Name"
 
+  - name: "PersistToMongo"
+    type: "mongoPersist"
+    concurrency: 1 # Adjust concurrency based on DB write performance/needs
+    batchSize: 100 # Adjust batch size based on DB write performance/needs
+    config:
+      uri: "mongodb://localhost:27017" # Replace with your actual MongoDB URI
+      database: "my_etl_data"          # Replace with your target database name
+      collection: "processed_contacts" # Replace with your target collection name
+
   - name: "ExportContacts"
     type: "exportContactsExample"
     concurrency: 1
@@ -21,3 +31,4 @@ pipeline:
     config:
       endpoint: "https://api.somewhere/v1/destination"
       apiKey: "MY_API_KEY"
+

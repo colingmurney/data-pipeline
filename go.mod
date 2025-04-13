@@ -1,4 +1,4 @@
-module etl-pipeline
+module data-pipeline
 
 go 1.24.2
 
