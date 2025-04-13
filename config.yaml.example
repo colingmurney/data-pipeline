@@ -1,0 +1,23 @@
+pipeline:
+  - name: "ImportContacts"
+    type: "importContactsExample"
+    concurrency: 1
+    batchSize: 100
+    config:
+      endpoint: "https://api.somewhere/v1/contacts"
+      apiKey: "MY_API_KEY"
+
+  - name: "TransformContacts"
+    type: "transformExample"
+    concurrency: 2
+    batchSize: 50
+    config:
+      uppercaseField: "Name"
+
+  - name: "ExportContacts"
+    type: "exportContactsExample"
+    concurrency: 1
+    batchSize: 100
+    config:
+      endpoint: "https://api.somewhere/v1/destination"
+      apiKey: "MY_API_KEY"
