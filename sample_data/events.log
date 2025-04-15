@@ -1,0 +1,10 @@
+{"timestamp": "2025-04-14T21:30:01Z", "UserID": "user-123", "eventType": "login", "platform": "web"}
+{"timestamp": "2025-04-14T21:30:15Z", "UserID": "user-456", "eventType": "pageView", "page": "/home"}
+{"timestamp": "2025-04-14T21:30:22Z", "UserID": "user-123", "eventType": "addToCart", "itemID": "item-abc"}
+{"timestamp": "2025-04-14T21:31:05Z", "UserID": "user-789", "eventType": "login", "platform": "mobile"}
+{"timestamp": "2025-04-14T21:31:11Z", "UserID": "user-123", "eventType": "pageView", "page": "/cart"}
+{"timestamp": "2025-04-14T21:31:45Z", "UserID": "user-456", "eventType": "pageView", "page": "/products/xyz"}
+{"timestamp": "2025-04-14T21:32:00Z", "UserID": "user-123", "eventType": "checkout", "cartValue": 99.99}
+{"timestamp": "2025-04-14T21:32:03Z", "UserID": "user-789", "eventType": "pageView", "page": "/settings"}
+{"timestamp": "2025-04-14T21:32:19Z", "UserID": "user-456", "eventType": "logout"}
+{"timestamp": "2025-04-14T21:32:30Z", "UserID": "user-123", "eventType": "logout"}
