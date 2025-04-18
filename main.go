@@ -19,10 +19,14 @@ type AppConfig struct {
 
 // loadConfig reads the config YAML file from disk.
 func loadConfig(path string) (*AppConfig, error) {
-	data, err := os.ReadFile(path)
-	if err != nil {
-		return nil, fmt.Errorf("failed to read config file %s: %w", path, err)
-	}
+   // Read raw config file and expand environment variables in its content
+   raw, err := os.ReadFile(path)
+   if err != nil {
+       return nil, fmt.Errorf("failed to read config file %s: %w", path, err)
+   }
+   // Expand environment variables (e.g., ${VAR} or $VAR) before unmarshaling YAML
+   expanded := os.ExpandEnv(string(raw))
+   data := []byte(expanded)
 
 	var cfg AppConfig
 	if err := yaml.Unmarshal(data, &cfg); err != nil {
